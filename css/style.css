@@ -1,0 +1,525 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  height: 100%;        /* Ocupar altura total da tela */
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+
+}
+
+/*-------------------------------------------------------------------------*/
+/* CABEÇALHO */
+.container-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+header {
+  background-color: #20A430;
+  padding: 4vh;
+  border-bottom: 5px solid #156615;
+  position: sticky;
+  top: 0;
+}
+
+.logo {
+  position: fixed;
+  display: block;
+  top: 0;
+  left: 4rem;
+  margin-top: 1rem;
+}
+
+.logo:hover {
+  transform: scale(1.20);
+  animation: 0.10s;
+  transition: 0.5s;
+}
+
+.nav_header {
+  display: flex;
+  gap: 50px
+}
+
+.nav_header a {
+  display: inline;
+  font-family: "Montserrat", sans-serif;
+  font-size: 18px;
+  color: #ffff;
+  text-decoration: none;
+}
+
+.nav_header a:hover {
+  transform: scale(1.11);
+  animation: 0.2s;
+  transition: 0.2s;
+  color: black;
+}
+
+.nav_header a.cadastro {
+  display: none;
+}
+
+.atalho-cadastro {
+  margin-left: auto;
+}
+
+.atalho-cadastro:hover {
+  transform: scale(1.11);
+  animation: 0.15s;
+  transition: 0.5s;
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.15);
+  border-radius: 100px;
+}
+
+.hamburguer {
+  display: none;
+  border: none;
+  background: none;
+  border-top: 3px solid #ffff;
+  cursor: pointer;
+}
+
+.hamburguer::before,
+.hamburguer::after {
+  content: "";
+  display: block;
+  width: 22px;
+  height: 3px;
+  background: #ffff;
+  margin-top: 5px;
+  position: relative;
+  transition: 0.3s;
+}
+
+@media (max-width: 750px) {
+
+  header::after {
+    background-color: #156615;
+    padding: 4vh;
+    border-bottom: 5px solid #156615;
+    position: sticky;
+    top: 0;
+  }
+
+  .logo {
+    margin-top: auto;
+    z-index: 9999;
+  }
+
+  .hamburguer {
+    display: block;
+    z-index: 1;
+  }
+
+  .nav_header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 90vw;
+    padding: 50px;
+    margin-top: 100px;
+    background-color: #20A430;
+    border-bottom-left-radius: 50px;
+    border-bottom-right-radius: 50px;
+    clip-path: circle(100px at 90% -50%);
+    transition: 1s ease-out;
+
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    pointer-events: none;
+    gap: 0;
+  }
+
+  .atalho-cadastro {
+    display: none;
+  }
+
+  .nav_header a.cadastro {
+    display: block;
+  }
+
+  /*ESTILOS ATIVOS*/
+  .nav_header.active {
+    clip-path: circle(1500px at 90% -15%);
+    pointer-events: all;
+  }
+
+  .nav_header.active a {
+    opacity: 1;
+  }
+
+  .active .hamburguer {
+    position: fixed;
+    top: 26px;
+    right: 16px;
+    border-top-color: transparent;
+  }
+
+  .hamburguer.ativa::before {
+    transform: rotate(135deg);
+  }
+
+  .hamburguer.ativa::after {
+    transform: rotate(-135deg);
+    top: -7px;
+  }
+}
+
+/*-------------------------------------------------------------------------*/
+/*CADASTRO E LOGIN*/
+
+.formularios {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: "Montserrat",sans-serif; 
+    margin-top: 30px;
+}
+
+.login-box {
+  background-color: #156615;
+  color: white;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  width: auto;
+  height: auto;
+  min-width: 400px;
+  min-height: 400px;
+  max-width: 500px;
+  max-height: 450px;
+  margin-top: auto;
+  text-align: center;
+}
+
+#usuario {
+  border-radius: 30px;
+  margin-top: 20px;
+  width: auto;
+  max-width: 400px;
+  min-width: 300px;
+  height: 30px;
+  border: 5px;
+  border-color: black;
+  text-align: center;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+#usuario:hover {
+  transition: 0.3s;
+  transform: scale(1.02);
+}
+
+#senha {
+  border-radius: 30px;
+  margin-top: 40px;
+  width: auto;
+  max-width: 400px;
+  min-width: 300px;
+  height: 30px;
+  border: 5px;
+  border-color: black;
+  text-align: center;
+}
+
+#senha:hover {
+  transition: 0.3s;
+  transform: scale(1.02);
+}
+
+#login {
+  border-radius: 50px;
+  background-color: #55EE47;
+  margin-top: 40px;
+  width: 200px;
+  height: 35px;
+  color: white;
+  border: none;
+}
+
+#login:hover {
+  transition: 0.2s;
+  background-color: #3dbd31;
+  transform: scale(1.05);
+  color: black;
+}
+
+#logins {
+  margin-top: 30px;
+}
+
+.formulario h3 {
+  margin-top: 30px;
+  top: auto;
+}
+
+#cadastrese {
+  border-radius: 50px;
+  background-color: #55EE47;
+  margin: 20px;
+  width: 200px;
+  height: 35px;
+  color: white;
+  border: none;
+}
+
+#cadastrese:hover {
+  transition: 0.2s;
+  background-color: #3dbd31;
+  transform: scale(1.05);
+  color: black;
+}
+
+.formulario {
+  margin-top: 40px;
+}
+
+.cadastro-box {
+  background-color: #156615;
+  color: white;
+  border-radius: 50px;
+  font-family: "Montserrat", sans-serif;
+  width: auto;
+  height: auto;
+  min-width: 400px;
+  min-height: 470px;
+  max-width: 500px;
+  max-height: 530px;
+  margin-top: auto;
+  text-align: center;
+}
+
+#nome {
+  border-radius: 30px;
+  margin-top: 40px;
+  width: auto;
+  max-width: 400px;
+  min-width: 300px;
+  height: 30px;
+  border: 5px;
+  border-color: black;
+  text-align: center;
+}
+
+#nome:hover {
+  transition: 0.3s;
+  transform: scale(1.02);
+}
+
+.cadastro {
+  margin: 40px;
+}
+
+.cadastro h3 {
+  margin-top: 30px;
+  top: auto;
+}
+
+#login-cadastro {
+  border-radius: 50px;
+  background-color: #55EE47;
+  width: 200px;
+  height: 35px;
+  color: white;
+  border: none;
+}
+
+#login-cadastro:hover {
+  transition: 0.2s;
+  background-color: #3dbd31;
+  transform: scale(1.05);
+  color: black;
+}
+
+.divisao {
+  margin-top: 20px;
+  height: 3px;
+  background-color: #156615;
+}
+
+.rodape img {
+  width: auto;
+  height: auto;
+  max-width: 200px;
+  min-width: 100px;
+  max-height: 100px;
+  min-height: 50px;
+  justify-content: space-between;
+}
+
+.rodape img:hover {
+  transform: scale(1.10);
+  animation: 0.10s;
+  transition: 0.5s;
+}
+
+.rodape {
+  margin-left: 80px;
+  display: block;
+  margin-top: 10px;
+}
+
+.rodape img {
+  margin-left: 60px;
+}
+
+footer {
+  background-color: #20A430;
+  color: white;
+}
+
+.rodape h3 {
+  font-size: 17px;
+  margin-top: 10px;
+  font-family: "Montserrat", sans-serif;
+}
+
+.loja {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  display: block;
+  margin-top: -120px;
+}
+
+.loja a {
+  font-family: "Montserrat", sans-serif;
+  color: white;
+  text-decoration: none;
+}
+
+.loja ul {
+  margin-top: 10px;
+}
+
+.loja a:hover {
+  transition: 0.2s;
+  transform: scale(1.2);
+  color: black;
+  display: inline-block;
+}
+
+.contato {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  padding-right: 20px;
+  margin-left: 850px;
+  margin-top: -140px;
+}
+
+.textocontato {
+  font-family: "Montserrat", sans-serif;
+  text-align: center;
+  margin-top: 15px;
+}
+
+.zipzope {
+  font-family: "Montserrat", sans-serif;
+  margin-top: 20px;
+}
+
+.zap {
+  margin-top: 5px;
+}
+
+.icones img {
+  width: auto;
+  height: auto;
+  max-width: 20px;
+  max-height: 20px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.icones {
+  display: block;
+  text-align: center;
+  margin-left: 480px;
+  margin-top: -115px;
+}
+
+.email-icon {
+  margin-left: 80px;
+  margin-top: 10px;
+}
+
+.whatsapp-icon {
+  margin-top: 16px;
+  margin-left: 170px;
+}
+
+.whats img {
+  width: 60px;
+  height: 60px;
+  max-width: 40px;
+  max-height: 40px;
+  min-width: 20px;
+  min-height: 20px;
+}
+
+.redesociais {
+  text-align: center;
+  margin-top: -15px;
+}
+
+.redesociais img {
+  width: auto;
+  height: auto;
+  max-width: 40px;
+  min-width: 30px;
+  max-height: 40px;
+  min-height: 30px;
+  margin-left: 10px;
+  margin-top: 20px;
+}
+
+.redesociais img:hover {
+  transition: 0.2s;
+  transform: scale(1.05);
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+  border-radius: 100px;
+}
+
+img[data-alt="instagram"]:hover {
+  box-shadow: 7px 7px 10px rgba(0, 0, 0, 0.5);
+  border: transparent;
+}
+
+.cnpj {
+  text-align: center;
+  background-color: #156615;
+  margin-top: 30px;
+}
+
+.textocnpj {
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+}
+
+/* CARROSEL */
+
+.container-fluid {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.principais_produtos h1 {
+  font-family: "Montserrat", sans-serif;
+  color: black;
+  font-size: 40px;
+}
+
+.container-md {
+  margin-top: 2rem;
+}

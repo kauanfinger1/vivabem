@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro | Viva Bem</title>
+    <link rel="website icon" href="imagens/vb2.png">
+
+    <!-- LINKAGEM - CSS E BOOTSTRAP -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <!------------------------------------------>
+    <!----------------- LINKAGEM - FONTES --------------------->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Aboreto&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <header>
+        <div class="container-header">
+            <a href="index.html">
+                <img class="logo" src="imagens/logovivabem.png" width="120px" height="80px"></a>
+
+
+            <nav class="nav_header">
+                <a href="#"><b>NOSSA HISTÓRIA</b></a>
+                <a href="#"><b>PRODUTOS</b></a>
+                <a href="#"><b>NOSSA LOJA</b></a>
+                <a class="cadastro" href="cadastro.html"><b>CADASTRE-SE</b></a> <!--SÓ APARECE EM MOBILE-->
+            </nav>
+
+            <a href="cadastro.html">
+                <img class="atalho-cadastro" src="imagens/user.png" width="40px" height="40px">
+            </a>
+            <button class="hamburguer"></button>
+        </div>
+    </header>
+
+    <div class="formularios">
+        <form class="cadastro-box">
+            <div class="cadastro">
+                <label for="logins" id="logins">
+                    <h3>Cadastre-se</h3>
+                </label>
+                <input type="text" id="usuario" name="USUARIO" inputmode="email" placeholder="Email">
+                <br>
+                <input type="text" id="nome" name="NOME" placeholder="Nome Completo">
+                <br>
+                <input type="password" id="senha" name="SENHA" placeholder="Senha">
+                <br>
+                <input type="password" id="senha" name="SENHA" placeholder="Repita a Senha">
+                <br>
+                <button type="submit" id="cadastrese">CADASTRE-SE</button>
+                <br>
+                <label for="login-texto" id="login-texto">
+                    <h3>Já Possui Cadastro?</h3>
+                </label>
+                <br>
+                <button id="login-cadastro">LOGIN</button>
+            </div>
+            </form>
+    </div>
+
+    <footer>
+        <div class="divisao"></div>
+        <div class="rodape">
+            <div class="texto"></div>
+            <img src="imagens/logovivabem.png" alt="logo">
+            <h3>A sua saúde é a nossa prioridade!</h3>
+        </div>
+        <br>
+        <div class="loja">
+            <h3>A VIVA BEM PRODUTOS NATURAIS</h3>
+            <ul><a href="#">Nossa História</a></ul>
+            <ul><a href="#">Nossos Produtos</a></ul>
+            <ul><a href="#">Nossa Loja</a></ul>
+            <ul><a href="cadastro.html">Cadastre-se</a></ul>
+        </div>
+        <div class="contato">
+            <h3>ENTRE EM CONTATO CONOSCO</h3>
+            <p class="textocontato">Rua Orlando Dezem, 258 - Jd. Coopagro</p>
+            <p class="textocontato">vivabemtoledo@gmail.com</p>
+            <div class="zipzope">
+                <p class="zap">(45) 99143-8968</p>
+                <p class="zap">(45) 98423-0065</p>
+            </div>
+        </div>
+        <div class="icones">
+            <img src="imagens/maps-icon.png" alt="maps" class="maps-icon">
+            <br>
+            <img src="imagens/email-icon.png" alt="email" class="email-icon">
+            <br>
+            <div class="whats">
+                <img src="imagens/whatsapp-icon.png" alt="whatsapp-icon" class="whatsapp-icon">
+            </div>
+        </div>
+        <div class="redesociais">
+            <a href="#" target="_blank">
+            <img src="imagens/insta-icon.png" data-alt="instagram" alt="instagram"></a>
+            <img src="imagens/face-icon.png" alt="facebook" href="#">
+            <img src="imagens/tiktok-icon.webp" alt="tiktok" href="#">
+        </div>
+        </div>
+        <div class="cnpj">
+            <div class="textocnpj">
+                <h3>VIVA BEM PRODUTOS NATURAIS - CNPJ: 51.679.972/0001-95</h3>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JS Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- LINKAGEM JS -->
+    <script src="js/index.js"></script>
+</body>
+
+</html>
